@@ -42,6 +42,8 @@ Error type: X<sup>NS</sup>
 Suppose we take a relation that follows strict ordering like greater than(>). Then it follows transitivity, and also follows asymmetry. Eg; 5 > 4 and 4 > 3 thus, 5 > 3. And if 5 > 3 it also follows that ￢3 > 5. In this case this combination holds true.
 But let’s take another example relation (equality), if a = b and b = c, this means a = c, but with antisymmetry it also says ￢c = a which is not correct. Hence we can’t decide the veracity or unsatisfiability of this combination.
 
+Error type: X<sup>NS</sup>
+
 <h4>7. R is both Transitive and Irreflexive</h4>
 
 Assume R is both transitive and irreflexive.
