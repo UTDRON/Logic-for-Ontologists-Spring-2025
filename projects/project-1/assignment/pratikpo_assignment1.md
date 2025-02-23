@@ -269,53 +269,38 @@ Since B is a subproperty of A, xBx implies xAx. But this contradicts irreflexivi
 <a id="org9d8084e"></a>
 
 **- A: Symmetric and A: Asymmetric:<br>**
-**- A: Symmetric and Ai: Asymmetric:<br>**
-**- A: Symmetric and B: Asymmetric:<br>**
-**- A: Symmetric and Bi: Asymmetric:<br>**
-
-**- Ai: Symmetric and A: Asymmetric:<br>**
-**- Ai: Symmetric and Ai: Asymmetric:<br>**
-**- Ai: Symmetric and B: Asymmetric:<br>**
-**- Ai: Symmetric and Bi: Asymmetric:<br>**
-
-**- B: Symmetric and A: Asymmetric:<br>**
-**- B: Symmetric and Ai: Asymmetric:<br>**
+If A is symmetric, xAy implies yAx. If A is asymmetric, xAy implies ¬yAx. This is a contradiction.<br>
+Similar explanations for:<br>
 **- B: Symmetric and B: Asymmetric:<br>**
-**- B: Symmetric and Bi: Asymmetric:<br>**
-
-**- Bi: Symmetric and A: Asymmetric:<br>**
-**- Bi: Symmetric and Ai: Asymmetric:<br>**
-**- Bi: Symmetric and B: Asymmetric:<br>**
+**- Ai: Symmetric and Ai: Asymmetric:<br>**
 **- Bi: Symmetric and Bi: Asymmetric:<br>**
 
+**- A: Symmetric and Ai: Asymmetric:<br>**
+If A is symmetric, xAy implies yAx. If Ai is asymmetric, xAiy implies ¬yAix. Since, Ai is inverse of A, so yAix, which is a contradiction with asymmetry of Ai.<br>
+Similar explanation for:<br>
+**- B: Symmetric and Bi: Asymmetric:<br>**
 
+**- A: Symmetric and B: Asymmetric:OK<br>**
+**- A: Symmetric and Bi: Asymmetric:OK<br>**
+**- Ai: Symmetric and B: Asymmetric:OK<br>**
+**- Ai: Symmetric and Bi: Asymmetric:OK<br>**
 
-A/A:
-If A is symmetric, xAy implies yAx. If A is asymmetric, xAy implies ¬(y A x). Both cannot hold simultaneously, causing a conflict (X).
+**- Ai: Symmetric and A: Asymmetric:<br>**
+If Ai is symmetric, xAiy implies yAix. If A is asymmetric, xAy implies ¬yAx. Since A is inverse of Ai, so xAiy means yAx, which is a contradiction with asymmetry of A.<br>
+Similar explanation for:<br>
+**- Bi: Symmetric and B: Asymmetric:<br>**
 
-A/Ai:
-If A is symmetric, xAy implies yAx. For Ai, xAiy implies yAix. Asymmetry of A would conflict with symmetry of Ai. Hence, inconsistency (X).
+**- B: Symmetric and A: Asymmetric:<br>**
+If B is symmetric, xBy implies yBx. If A is asymmetric, xAy implies ¬yAx. Since B is subproperty of A, so yBx means yAx, which is a contradiction with asymmetry of A.
 
-Ai/A:
-If Ai is symmetric implies xAi and yAix, but since Ai​ is the inverse of A (which is asymmetric), this creates a contradiction where xAy forbids yAx. Symmetry and asymmetry cannot coexist for inverse properties.
+**- B: Symmetric and Ai: Asymmetric:<br>**
+If B is symmetric, xBy implies yBx. If Ai is asymmetric, xAiy implies ¬yAix. 
+Since B is subproperty of A so xBy implies xAy. Also Ai is inverse of A so xAy implies yAix, which contradicts with asymmetry of Ai.
 
-Ai/Ai:
-same as A/A
+**- Bi: Symmetric and A: Asymmetric:<br>**
+If Bi is symmetric, xBiy implies yBix. If A is asymmetric, xAy implies ¬yAx.
+Since B is inverse of Bi so xBiy implies yBx. Also B is subproperty of A so yBx implies yAx, which contradicts with the asymmetry of A.
 
-B/A:
-If A is symmetric or asymmetric, B must align with these characteristics due to its sub-property status
-
-B/Ai
-If B, inverse of A, is symmetric it means that yAx and xAy both hold. This contradicts Ai´s asymmetry, where xAiy forbids yAix. making it impossible for B to be symmetric and Ai asymmetric.
-
-B/B:
-same as A/A
-
-B/Bi:
-Bi as the inverse of B can conflict if B is symmetric or asymmetric. The inverse relationship can cause contradictions with symmetry or asymmetry (X).
-
-B/Ai:
-If xAy implies yAx (symmetry) or ¬(yAx) (asymmetry), then B as a sub-property of A and Ai​ as its inverse can conflict because xBy and xAi​y may not align due to the inverse relationship (X).
-
-Bi/Bi:
-same as A/A
+**- Bi: Symmetric and Ai: Asymmetric:<br>**
+If Bi is symmetric, xBiy implies yBix. If Ai is asymmetric, xAiy implies ¬yAix.
+Since B is inverse of Bi so yBix implies xBy. Also B is subproperty of A, so xBy implies xAy. Since Ai is inverse of A so xAy implies yAix, which contradicts asymmetry of Ai.
