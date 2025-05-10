@@ -1,0 +1,10 @@
+# Title: Object Property Used as Class
+# Constraint Description: No object property should also be declared as a class.
+# Severity: Error
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?entity ?error WHERE {
+  ?entity a owl:ObjectProperty , owl:Class .
+  BIND (concat("ERROR: Entity ", str(?entity), " is declared both as owl:ObjectProperty and owl:Class.") AS ?error)
+}

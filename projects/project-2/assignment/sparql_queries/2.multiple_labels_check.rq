@@ -1,0 +1,15 @@
+# Title: Class with Inconsistent Labels
+# Constraint Description: A class should not have multiple rdfs:label values with conflicting content
+# Severity: Warning
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?class ?label1 ?label2 ?error WHERE {
+  ?class a owl:Class ;
+         rdfs:label ?label1 , ?label2 .
+  FILTER (langMatches(lang(?label1), "en"))
+  FILTER (langMatches(lang(?label2), "en"))
+  FILTER (?label1 != ?label2)
+  BIND (concat("WARNING: Class ", str(?class), " has inconsistent English labels: '", str(?label1), "' and '", str(?label2), "'.") AS ?error)
+}

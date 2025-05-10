@@ -1,0 +1,10 @@
+# Title: Redundant Equivalent Class Declarations
+# Constraint Description: No class should be declared equivalent to itself.
+# Severity: Error
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?class ?error WHERE {
+  ?class owl:equivalentClass ?class .
+  BIND (concat("ERROR: Class ", str(?class), " is declared equivalent to itself.") AS ?error)
+}

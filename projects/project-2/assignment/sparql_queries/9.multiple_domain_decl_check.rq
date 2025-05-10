@@ -1,0 +1,14 @@
+# Title: Multiple Domain Declarations
+# Constraint Description: An object property should not have more than one rdfs:domain.
+# Severity: Error
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?property ?error WHERE {
+  ?property a owl:ObjectProperty .
+  ?property rdfs:domain ?domain1 .
+  ?property rdfs:domain ?domain2 .
+  FILTER (?domain1 != ?domain2)
+  BIND (concat("ERROR: Object property ", str(?property), " has multiple rdfs:domain declarations.") AS ?error)
+}

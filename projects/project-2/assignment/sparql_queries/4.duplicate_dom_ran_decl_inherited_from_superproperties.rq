@@ -1,0 +1,14 @@
+# Title: Redundant Domain or Range with Superproperties
+# Constraint Description: A property should not duplicate domain/range declarations already inherited from superproperties.
+# Severity: Warning
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?property ?superProp ?error WHERE {
+  ?property a owl:ObjectProperty ;
+            rdfs:subPropertyOf ?superProp ;
+            rdfs:domain ?domain .
+  ?superProp rdfs:domain ?domain .
+  BIND (concat("WARNING: Property ", str(?property), " redundantly re-declares domain of superproperty ", str(?superProp)) AS ?error)
+}

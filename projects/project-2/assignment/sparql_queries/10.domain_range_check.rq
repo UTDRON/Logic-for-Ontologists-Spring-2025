@@ -1,0 +1,17 @@
+# Title: Domain and Range Classes Must Exist
+# Constraint Description: The classes used as rdfs:domain or rdfs:range of object properties should be declared as owl:Class.
+# Severity: Error
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?property ?error WHERE {
+  ?property a owl:ObjectProperty .
+  OPTIONAL { ?property rdfs:domain ?domain . }
+  OPTIONAL { ?property rdfs:range ?range . }
+  FILTER (
+    (BOUND(?domain) && NOT EXISTS { ?domain a owl:Class }) ||
+    (BOUND(?range) && NOT EXISTS { ?range a owl:Class })
+  )
+  BIND (concat("ERROR: Property ", str(?property), " has domain or range not declared as owl:Class.") AS ?error)
+}

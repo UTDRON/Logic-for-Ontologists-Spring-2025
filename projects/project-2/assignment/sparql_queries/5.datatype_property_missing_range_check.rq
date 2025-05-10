@@ -1,0 +1,12 @@
+# Title: Datatype Property Missing Range
+# Constraint Description: All owl:DatatypeProperty declarations must include an rdfs:range.
+# Severity: Warning
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?property ?error WHERE {
+  ?property a owl:DatatypeProperty .
+  FILTER NOT EXISTS { ?property rdfs:range ?range . }
+  BIND (concat("WARNING: Datatype property ", str(?property), " has no rdfs:range.") AS ?error)
+}

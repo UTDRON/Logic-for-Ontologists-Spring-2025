@@ -1,0 +1,14 @@
+# Title: Class Without Superclass
+# Constraint Description: Every class should have at least one rdfs:subClassOf (except owl:Thing).
+# Severity: Warning
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?class ?error WHERE {
+  ?class a owl:Class .
+  FILTER (!isBlank(?class))
+  FILTER (?class != owl:Thing)
+  FILTER NOT EXISTS { ?class rdfs:subClassOf ?parent . }
+  BIND (concat("WARNING: Class ", str(?class), " has no superclass defined.") AS ?error)
+}
